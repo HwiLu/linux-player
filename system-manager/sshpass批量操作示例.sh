@@ -1,9 +1,9 @@
 #!/bin/bash
 for ip in `cat ip_list`
 do
-	sshpass -p PASSWD scp -o StrictHostKeyChecking=no 文件 root@$ip:/目录
+	sshpass -p password scp -o StrictHostKeyChecking=no 文件 root@$ip:/目录
 	
 	sshpass -p password ssh -o StrictHostKeyChecking=no username@$ip  "command"
 	
-	scp -r root@$:目录/heb* /本地目录
+	scp -r root@$ip:远程目录文件 /本地目录/      #远程主机下载文件到本地 
 done
