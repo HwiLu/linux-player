@@ -1,6 +1,6 @@
 
 #!/bin/bash
-#配合monitor.sh一起使用
+#配合monitor_linux.sh一起使用
 function submitJob(){
          /usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples-2.8.2-bc1.4.0.jar pi 10 1000 >/dev/null 2>&1 &
 }
