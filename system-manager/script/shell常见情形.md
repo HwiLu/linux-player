@@ -143,7 +143,10 @@ for i in {0..9};do echo $RANDOM;done
 ```
  - 行列转换
  ---
- 
+ - 打印file文件的倒数第5行
+ ```
+ tail -n  5 file | head -n 1
+ ```
  - 数组的使用
  ---
  
