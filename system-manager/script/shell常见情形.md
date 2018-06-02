@@ -126,7 +126,13 @@ done
     touch file$i && echo file $i is ok
  done
  ```
- 
+ - 变量自增
+ ---
+ ```
+ num=0
+  num=$(($num+1))  或
+  ((num++))
+ ```
  - 打印随机数
  ---
 输出0-9以内的随机数
