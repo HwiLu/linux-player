@@ -153,6 +153,21 @@ for i in {0..9};do echo $RANDOM;done
  ```
  tail -n  5 file | head -n 1
  ```
+ - 找出两个文件中不同的行，只显示file2比file1多的行
+ ---
+ 
+ ```vim
+ for i in `cat file2`
+ do
+  match=`grep i file1`
+  if [ -n match];then
+   echo $i
+  else
+   echo
+  fi
+ done
+ ```
+ 
  - 数组的使用
  ---
  
