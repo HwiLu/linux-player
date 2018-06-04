@@ -16,9 +16,19 @@ do
         #echo end_of_ansible >>cpu_data.txt
         #echo end_of_ansible >>memory_data.txt
 
-        cat /root/luhw/memory_data.txt |grep '65750'  | awk -v dt="$current" 'BEGIN {total_mem_Used=0;total_used_Perc=0;n=0}{n++;total_mem_Used+=$2;total_used_Perc+=$4} END{printf("%s   %8.fGB    %.2f%", dt,total_mem_Used/n/1024/1024,100*total_used_Perc/n)}'
+        cat /root/luhw/memory_data.txt | grep '263567124'  | awk -v dt="$current" 'BEGIN {total_mem_Used=0;total_used_Perc=0;n=0}{n++;total_mem_Used+=$2;total_used_Perc+=$4} END{printf("%s   %8.fGB    %.2f%", dt,total_mem_Used/n/1024/1024,100*total_used_Perc/n)}'
 
-        cat /root/luhw/memory_data.txt | grep '65750'  | awk 'BEGIN {app_used=0;n=0}{n++;app_mem_Perc+=$5;app_used+=$3} END{printf("%8.fGB       %.2f%", app_used/n/1024/1024, 100*app_mem_Perc/n)}'
+        cat /root/luhw/memory_data.txt | grep '263567124'  | awk 'BEGIN {app_used=0;n=0}{n++;app_mem_Perc+=$5;app_used+=$3} END{printf("%8.fGB       %.2f%", app_used/n/1024/1024, 100*app_mem_Perc/n)}'
 
         cat /root/luhw/cpu_data.txt | grep Average | awk 'BEGIN {total=0;n=0}{n++;total+=$8} END{printf("%13.2f%\n", 100 - total/n)}'
 done
+
+
+#在运行过程中发现
+#ansible的性能并没有想象中的那么好，
+#1000台机器以上，每次并发100，发现运行几分钟之后；
+#ansible程序出现运行缓慢，甚至卡死的情况；
+#初步推测可能是主机IO负载过高导致
+#具体原因不详。
+
+#所以，如果需要持续不断的采集监控信息，最好还是使用监控软件的api进行采集，比如：调用ambari的api
