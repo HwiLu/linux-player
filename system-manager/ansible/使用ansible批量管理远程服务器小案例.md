@@ -3,7 +3,7 @@
 ```
 ansible all -m ping
 ```
-# cpoy
+# copy
 - copy模块
 
 使用copy模块，可以将本地文件一键复制到远程服务器； 
