@@ -178,9 +178,11 @@ for i in {0..9};do echo $RANDOM;done
  ---
 判断两个字符串是否相等
 ```vim
+变量与字符串
 if [ "$test"x = "test"x ]; then
 ```
 ```vim
+两个变量
 if [ "$a"x = "$b"x ]; then
 ```
 大于小于
