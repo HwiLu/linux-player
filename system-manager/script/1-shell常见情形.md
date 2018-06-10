@@ -192,7 +192,42 @@ if [[ "$a" > "$b" ]];then
 if [ "$a" \> "$b" ] ;then
 ```
 
- 
+- 重定向
+**Here Document**
+Here Document 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。
+它的基本的形式如下：
+command << delimiter
+    document
+delimiter
+它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。
+
+**注意：
+结尾的delimiter 一定要顶格写，前面不能有任何字符，后面也不能有任何字符，包括空格和 tab 缩进。
+开始的delimiter前后的空格会被忽略掉。**
+将一段内容作为输入传递给命令；示例：
+```vim
+$wc -l << EOF
+>hehe
+>haha
+>heihei
+>EOF
+$3
+$
+```
+**标准错误和标准输出分别存放**
+```
+ls /root/tmp 1>find.out 2>find.err ，这里会将 STDOUT 与 STDERR 分别存放至 find.out 和 find.err 中
+```
+**标准错误和标准输出全部重定向到文件**
+```vim
+ls /root/tmp &>find.all
+```
+& 是一个描述符，**如果1或2前不加&，会被当成一个普通文件。**
+
+**标准错误和标准输出重定向至回收站**
+```vim
+command >dev/null 2>&1 
+```
  
  - 数组的使用
  ---
