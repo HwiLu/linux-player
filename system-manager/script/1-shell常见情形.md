@@ -194,6 +194,7 @@ if [ "$a" \> "$b" ] ;then
 
 - 重定向
 **Here Document**
+
 Here Document 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。
 它的基本的形式如下：
 command << delimiter
