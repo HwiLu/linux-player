@@ -174,6 +174,23 @@ for i in {0..9};do echo $RANDOM;done
   fi
  done
  ```
+ - 字符串比较
+ ---
+判断两个字符串是否相等
+```vim
+if [ "$test"x = "test"x ]; then
+```
+```vim
+if [ "$a"x = "$b"x ]; then
+```
+大于小于
+```vim
+大于,在ASCII字母顺序下.如: 
+if [[ "$a" > "$b" ]];then
+if [ "$a" \> "$b" ] ;then
+```
+
+ 
  
  - 数组的使用
  ---
