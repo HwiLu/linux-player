@@ -217,11 +217,11 @@ $
 ```
 **标准错误和标准输出分别存放**
 ```
-ls /root/tmp 1>find.out 2>find.err ，这里会将 STDOUT 与 STDERR 分别存放至 find.out 和 find.err 中
+ls /root/tmp 1>ls.out 2>ls.err ，这里会将 STDOUT 与 STDERR 分别存放至 ls.out 和 ls.err 中
 ```
 **标准错误和标准输出全部重定向到文件**
 ```vim
-ls /root/tmp &>find.all
+ls /root/tmp &> ls.all
 ```
 & 是一个描述符，*如果1或2前不加&，会被当成一个普通文件。*
 
