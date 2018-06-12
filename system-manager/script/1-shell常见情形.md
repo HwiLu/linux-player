@@ -229,7 +229,12 @@ ls /root/tmp &> ls.all
 ```vim
 command >dev/null 2>&1 
 ```
- 
+- awk
+---
+**awk if **
+```
+cat test.txt | awk '{if (($1>1))}{print $1}'
+```
  - 数组的使用
  ---
  
