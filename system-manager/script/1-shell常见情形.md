@@ -231,7 +231,7 @@ command >dev/null 2>&1
 ```
 - awk
 ---
-**awk if **
+**awk if**
 ```
 cat test.txt | awk '{if (($1>1))}{print $1}'
 ```
