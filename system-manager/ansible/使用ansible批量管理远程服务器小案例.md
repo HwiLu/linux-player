@@ -18,7 +18,7 @@ ansible all -m copy -a "src=/tmp/test.file dest=~/"
 - command模块
 
 command模块为ansible默认模块，不指定-m参数时，使用的就是command模块；m即代表module
-comand模块比较简单，其命令的执行不是通过shell执行的，所以，像这些 "<", ">", "|", and "&"操作都不可以，并且，**不支持管道符**
+comand模块比较简单，其命令的执行不是通过shell执行的，所以，像这些 "<", ">", "|", and "&"操作都不可以，以及“;”也不可以，并且，**不支持管道符**
 
 - raw模块
 
