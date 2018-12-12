@@ -27,3 +27,21 @@ do
 done
 
 ```
+
+## read old passwd and change to the new one
+
+```vim
+
+#!/bin/sh
+
+for node in `cat nodes | grep -v ^# | awk '{print $1}'`
+do
+    old_password=`grep -w $node password.txt | cut -d: -f2`
+    #password=`mkpasswd | sed  's/\W/%/g'`
+	
+    new_password='Cqqq%2018'
+    echo $node:$old_password:$new_password
+
+    sshpass -p $old_password ssh root@$node "echo root:$new_password | chpasswd"
+done
+```
