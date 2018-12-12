@@ -238,3 +238,13 @@ cat test.txt | awk '{if (($1>1))}{print $1}'
  - 数组的使用
  ---
  
+ ---
+ **sed 中使用shell变量**
+ 
+ sed一般使用单引号，sed引用shell变量时使用双引号即可，因为双引号是弱转义，不会去除$的变量表示功能，而单引号为强转义，会把$作为一般符号表示，所以不会表示为变量。
+ ```vim
+#如果要使用shell变量，就需要使用双引号
+pattern1=XXX
+pattern2=XXX 
+sed -i "s/$pattern1/$pattern2/g" inputfile
+ ```
