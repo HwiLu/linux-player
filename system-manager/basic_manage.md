@@ -16,3 +16,14 @@ chkconfig cgroups on   #开启启动
 ```vim 
 du -s -h /* | sort -n
 ```
+
+## 一次性杀掉带某关键字的所有进程
+For example:
+**一次杀掉所有带有ambari关键字的进程**
+```vim
+ps -ef  | grep ambari| grep -v grep  | awk '{print $2}' | xargs  kill -9
+```
+or
+```vim
+ps -ef  | grep ambari| grep -v grep  | awk '{print $2}' -exec rm -f {} \;
+```
