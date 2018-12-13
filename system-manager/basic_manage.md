@@ -27,3 +27,11 @@ or
 ```vim
 ps -ef  | grep ambari| grep -v grep  | awk '{print $2}' -exec rm -f {} \;
 ```
+## nfs 挂载
+```vim
+#nfs挂载
+
+mount -t nfs -o rw,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,proto=tcp ip:/sop/fileserver /mnt/fileserver
+
+umount /mnt/fileserver
+```
