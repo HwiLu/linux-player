@@ -11,3 +11,8 @@
 service cgroups start   #开启cgroups服务
 chkconfig cgroups on   #开启启动
 ```
+## 统计每个目录瞎文件所占空间的大小，并由大到小排序
+
+```vim 
+du -s -h /* | sort -n
+```
