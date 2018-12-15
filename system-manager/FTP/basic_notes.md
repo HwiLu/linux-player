@@ -2,5 +2,9 @@
 - ftp user add
 
 ```vim
-user add -s /bin/bash -d /usr/libexec/openssh/sftp-server
+useradd -s /bin/bash -d /usr/libexec/openssh/sftp-server 
+```
+or
+```vim
+useradd -s /sbin/nologin 
 ```
