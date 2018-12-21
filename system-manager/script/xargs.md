@@ -14,8 +14,11 @@ find . -mtime +7 | xargs -I '{}' mv {} /tmp/bak/
 ls *.log | xargs -t -I '{}' mv {} {}.backup
 
 ls *.log  | xargs -I '--'  mv -- --.bak
+same as :
+ls *.log  | xargs -i  mv {} {}.bak
 ```
 `-t` 参数，在执行后面的命令前，先将命令打印出来。 
+-i/I, 指定替代符来替代标准输入，-I必须指定, -i可不指定，默认是 {}
 > -I R                         same as --replace=R (R must be specified).
-
+>
 > -i,--replace=[R]             Replace R in initial arguments with names read from standard input. If R is unspecified, assume {}.
