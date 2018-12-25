@@ -7,3 +7,6 @@
 ## 安装httpd或者ftp软件
 
 ## 配置远程yum源
+
+
+[](https://www.jianshu.com/p/57f22e371e46)
