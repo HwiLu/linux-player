@@ -16,11 +16,11 @@ do
         #echo end_of_ansible >>cpu_data.txt
         #echo end_of_ansible >>memory_data.txt
 
-        cat /root/luhw/memory_data.txt | grep '263567124'  | awk -v dt="$current" 'BEGIN {total_mem_Used=0;total_used_Perc=0;n=0}{n++;total_mem_Used+=$2;total_used_Perc+=$4} END{printf("%s   %8.fGB    %.2f%", dt,total_mem_Used/n/1024/1024,100*total_used_Perc/n)}'
+        cat /root/memory_data.txt | grep '263567124'  | awk -v dt="$current" 'BEGIN {total_mem_Used=0;total_used_Perc=0;n=0}{n++;total_mem_Used+=$2;total_used_Perc+=$4} END{printf("%s   %8.fGB    %.2f%", dt,total_mem_Used/n/1024/1024,100*total_used_Perc/n)}'
 
-        cat /root/luhw/memory_data.txt | grep '263567124'  | awk 'BEGIN {app_used=0;n=0}{n++;app_mem_Perc+=$5;app_used+=$3} END{printf("%8.fGB       %.2f%", app_used/n/1024/1024, 100*app_mem_Perc/n)}'
+        cat /root/memory_data.txt | grep '263567124'  | awk 'BEGIN {app_used=0;n=0}{n++;app_mem_Perc+=$5;app_used+=$3} END{printf("%8.fGB       %.2f%", app_used/n/1024/1024, 100*app_mem_Perc/n)}'
 
-        cat /root/luhw/cpu_data.txt | grep Average | awk 'BEGIN {total=0;n=0}{n++;total+=$8} END{printf("%13.2f%\n", 100 - total/n)}'
+        cat /root/cpu_data.txt | grep Average | awk 'BEGIN {total=0;n=0}{n++;total+=$8} END{printf("%13.2f%\n", 100 - total/n)}'
 done
 
 
