@@ -33,6 +33,6 @@ RAID1 称为镜像，它将数据完全一致地分别写到工作磁盘和镜�
 
 即raid1+0，先做raid1，然后两组raid1做raid0.
 
-![raid10](https://pic4.zhimg.com/29966aef58264fa7eabd94b2baa2fe43_r.jpg)
+![raid10](https://pic3.zhimg.com/v2-7e66afc48d899d307db0328ca2c70a8e_r.jpg)
 
 [reference](https://www.zhihu.com/question/20131784)
