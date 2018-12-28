@@ -3,6 +3,7 @@
 - 优点：使用 n 颗硬盘，即可拥有将近 n 倍的读写效能。
 - 缺点：数据安全性较低，同组数组中任一硬盘发生问题就会造成数据遗失。
 - 硬盘数量：最少 2 个。
+
 ![raid0](https://pic2.zhimg.com/80/0ab608c6eef8e74f926f9c1e89753a99_hd.png) 
 
 ![raid0](https://pic4.zhimg.com/80/v2-29d439a5d1a24127bc48d41e42b093af_hd.jpg)
