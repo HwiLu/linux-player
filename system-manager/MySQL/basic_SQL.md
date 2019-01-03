@@ -92,4 +92,35 @@ SQL> startup;
 SQL> shutdown normal;
 ```
 
+赋予可以创建会话的权限
 
+```sql
+ grant create session to ABC;
+```
+
+```sql
+
+/* 查询用户所具有的权限  ,用户名需大写 */
+SELECT * FROM USER_SYS_PRIVS WHERE USERNAME='BOMCUSER';
+
+/* 查询oracle用户默认的表空间 */
+select username,default_tablespace from dba_users WHERE username='BOMCUSER';
+
+/* 查看用户下面的所有的表 */  
+   select * from user_tables;
+   select * from dba_tables where owner='TEST';
+  
+  
+/* 查看用户下面的所有的表 */  
+   select * from user_tables;
+   select * from dba_tables where owner='TEST';
+  
+  
+/*查看表空间下有多少用户，tablespace_name表空间 的名字一定要大写 */
+   select distinct  s.owner  from  dba_segments s where s.tablespace_name ='TS_TEST';
+   
+   
+/* 运行一个sql文件 */
+	sql>${path_to_sql}/@file.sql
+	
+ ```
