@@ -101,10 +101,10 @@ SQL> shutdown normal;
 ```sql
 
 /* 查询用户所具有的权限  ,用户名需大写 */
-SELECT * FROM USER_SYS_PRIVS WHERE USERNAME='BOMCUSER';
+SELECT * FROM USER_SYS_PRIVS WHERE USERNAME='yourUSER';
 
 /* 查询oracle用户默认的表空间 */
-select username,default_tablespace from dba_users WHERE username='BOMCUSER';
+select username,default_tablespace from dba_users WHERE username='yourUSER';
 
 /* 查看用户下面的所有的表 */  
    select * from user_tables;
