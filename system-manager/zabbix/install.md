@@ -1,0 +1,4 @@
+
+zabbix server
+
+zabbix agent
