@@ -21,7 +21,15 @@ mysqladmin -uroot  password "新密码" 	#将原本不需要密码登入的root�
 ```
 update user set host='%' where user='root'; 
 ```
+## 运行某用户在某主机上登陆数据库
+```sql
 
+GRANT ALL PRIVILEGES ON *.* TO 'your_mysql_username'@'your_remote_ip'IDENTIFIED BY 'your_mysql_password' 
+```
+## 允许所有远程机器连接 
+```
+update user set host='%' where user='root'; 
+```
 
 # Oracle
 
