@@ -1,5 +1,5 @@
-## 使用Mysql.xxx.tar.gz编译安装
-## 先安装mysql需要的依赖包 或者 软件
+# Method1:使用mysql-5.6.33.tar.gz编译安装
+## 先安装mysql需要的依赖包
 
 安装openssl
 ```sh
@@ -7,7 +7,7 @@ yum install -y openssl-devel ncurses-devel gcc-c++ cmake bison make perl
 ```
 ## 安装mysql
 ```sh 
-tar -zvxf mysql.xxxx.tar.gz
+tar -zvxf mysql-5.6.33.tar.gz -C /usr/local/mysql
 echo "以下过程要很久"
 cmake -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_UNIX_ADDR=/tmp/mysql.sock -DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_MEMORY_STORAGE_ENGINE=1　-DWITH_READLINE=1 -DENABLED_LOCAL_INFILE=1 -DMYSQL_TCP_PORT=3306
 ```
@@ -80,7 +80,7 @@ cp /usr/local/mysql/bin/mysql /bin/
 应该可以直接进去，不需要输入密码。
 
 
-# 使用mysql-5.7.24-el7-x86_64.tar编译安装
+# Method2:使用mysql-5.7.24-el7-x86_64.tar编译安装
 
 创建用户
 useradd -s /bin/false -d /usr/local/mysql/ mysql
