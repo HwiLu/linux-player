@@ -148,3 +148,7 @@ mysql -uroot -p
 mysql>grant all privileges on *.* to 'root'@'%' identified by 'root';
 mysql>flush privileges;
 ```
+
+**Some Bug**
+*MySql server startup error 'The server quit without updating PID file *
+[MySql server startup error 'The server quit without updating PID file ](https://stackoverflow.com/questions/4963171/mysql-server-startup-error-the-server-quit-without-updating-pid-file)
