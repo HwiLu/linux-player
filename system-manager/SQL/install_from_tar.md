@@ -126,7 +126,7 @@ pid-file=/usr/local/mysql/mysq.pid
 !includedir /etc/my.cnf.d
 ```
 
-初始化数据库
+## 初始化数据库
 ```sh
 bin/mysqld --initialize --user=mysql  # << MySQL 5.7.6 更高版本执行
 # 初始化过程会生成一个mysql root初始密码
@@ -142,4 +142,9 @@ service mysqld start
 使用初始化时生成的密码登陆
 ```sh
 mysql -uroot -p
+```
+## 修改root密码
+```sql
+mysql>grant all privileges on *.* to 'root'@'%' identified by 'root';
+mysql>flush privileges;
 ```
