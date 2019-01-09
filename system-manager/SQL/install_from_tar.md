@@ -1,3 +1,4 @@
+## 使用Mysql.xxx.tar.gz编译安装
 ## 先安装mysql需要的依赖包 或者 软件
 
 安装openssl
@@ -77,3 +78,61 @@ cp /usr/local/mysql/bin/mysql /bin/
 ## 登入试试
 `mysql`
 应该可以直接进去，不需要输入密码。
+
+
+# 使用mysql-5.7.24-el7-x86_64.tar编译安装
+
+创建用户
+useradd -s /bin/false -d /usr/local/mysql/ mysql
+创建数据目录
+mkdir -p /usr/local/mysql/data
+赋权给mysql用户
+chown -R mysql.mysql /usr/local/mysql
+安装
+```sh
+yum -y install libaio gcc make
+tar -zvxf mysql-5.7.24-el7-x86_64.tar -C  /usr/local/mysql
+ 
+mv /usr/local/mysql/mysql-5.7.24-el7-x86_64/* /usr/local/mysql
+
+```
+编辑MySQL配置文件
+```vim
+# cat /etc/my.cnf
+[mysqld]
+datadir=/usr/local/mysql/data
+basedir=/usr/local/mysql
+socket=/tmp/mysql.sock
+pid-file=/usr/local/mysql/mysql.pid
+log-error=/var/log/mariadb.log
+port=3306
+character_set_server=utf8
+user=mysql
+max_connections=1500
+
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+# Settings user and group are ignored when systemd is used.
+# If you need to run mysqld under a different user or group,
+# customize your systemd unit file for mariadb according to the
+# instructions in http://fedoraproject.org/wiki/Systemd
+[mysqld_safe]
+log-error=/var/log/mariadb.log
+pid-file=/usr/local/mysql/mysq.pid
+#
+# include all files from the config directory
+#
+!includedir /etc/my.cnf.d
+```
+
+初始化数据库
+```sh
+bin/mysqld --initialize --user=mysql  # << MySQL 5.7.6 更高版本执行
+# 初始化过程会生成一个mysql root初始密码
+```
+
+```
+cp support-files/mysql.server /etc/init.d/mysqld
+service mysqld start
+```
+
