@@ -151,5 +151,6 @@ mysql>flush privileges;
 
 **Some Bug**
 
-> 1.MySql server startup error 'The server quit without updating PID file
+1.MySql server startup error 'The server quit without updating PID file
+
 [MySql server startup error 'The server quit without updating PID file ](https://stackoverflow.com/questions/4963171/mysql-server-startup-error-the-server-quit-without-updating-pid-file)
