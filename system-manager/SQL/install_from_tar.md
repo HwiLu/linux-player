@@ -11,10 +11,13 @@ echo "以下过程要很久"
 cmake -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_UNIX_ADDR=/tmp/mysql.sock -DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_MEMORY_STORAGE_ENGINE=1　-DWITH_READLINE=1 -DENABLED_LOCAL_INFILE=1 -DMYSQL_TCP_PORT=3306
 ```
 
+
+**重新运行配置，需要删除CMakeCache.txt文件**
 ```sh
-#**重新运行配置，需要删除CMakeCache.txt文件**
 #rm -f CMakeCache.txt
-#参数说明:：
+```
+**参数说明**
+```xml
 #-DCMAKE_INSTALL_PREFIX=/usr/local/mysql 安装位置
 #-DMYSQL_UNIX_ADDR=/tmp/mysql.sock 指定 socket （套接字）文件位置
 #-DEXTRA_CHARSETS=all 扩展字符支持
