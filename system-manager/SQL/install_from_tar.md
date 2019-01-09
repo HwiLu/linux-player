@@ -1,4 +1,5 @@
-# Method1:使用mysql-5.6.33.tar.gz编译安装
+# __Method1:__  使用mysql-5.6.33.tar.gz编译安装
+---
 ## 先安装mysql需要的依赖包
 
 安装openssl
