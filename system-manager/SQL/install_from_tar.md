@@ -1,5 +1,5 @@
-# __Method1:__  使用mysql-5.6.33.tar.gz编译安装
----
+# Method1:   使用mysql-5.6.33.tar.gz编译安装
+
 ## 先安装mysql需要的依赖包
 
 安装openssl
@@ -74,13 +74,13 @@ cp support-files/mysql.server /etc/init.d/mysqld
 ```sh
 chkconfig mysqld on 或者 echo "/usr/local/mysql/bin/myql" >> /etc/rc.local
 #将/usr/local/mysql/bin/mysql 复制到/bin下，之后便可以直接使用mysql进入mysql了
-cp /usr/local/mysql/bin/mysql /bin/
+cp /usr/local/mysql/bin/mysql /usr/bin/
 ```
 ## 登入试试
 `mysql`
 应该可以直接进去，不需要输入密码。
 
-
+---
 # Method2:使用mysql-5.7.24-el7-x86_64.tar编译安装
 
 创建用户
@@ -131,9 +131,15 @@ pid-file=/usr/local/mysql/mysq.pid
 bin/mysqld --initialize --user=mysql  # << MySQL 5.7.6 更高版本执行
 # 初始化过程会生成一个mysql root初始密码
 ```
+## 启动
 
-```
+```sh
 cp support-files/mysql.server /etc/init.d/mysqld
+cp /usr/local/mysql/bin/mysql /usr/bin/
 service mysqld start
 ```
-
+## 登陆
+使用初始化时生成的密码登陆
+```sh
+mysql -uroot -p
+```
