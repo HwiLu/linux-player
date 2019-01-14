@@ -1,47 +1,33 @@
 
 ## 开启telnet
 
-
-一、检查telnet服务是否安装
+1. 检查telnet服务是否安装
+```sh
 chkconfig -list|grep telnet
-二、安装telnet服务
+```       
 
-   
+2.安装telnet服务
 
-    上传并安装telnet-server-1.2-14.4.x86_64.rpm包，安装包见附件
+```sh 
+zypper in telnet-server
+```
+zypper源配置请见[zypper源配置](../zypper_confugurate.md)
 
+3. 修改/etc/xinetd.d/telnet文件
+```sh
+vi /etc/xinetd.d/telnet
+```
+将disable的值设置为no
  
 
-     rpm -ivh --nodeps telnet-server-1.2-14.4.x86_64.rpm
-
- 
-
-三、修改/etc/xinetd.d/telnet文件
-
- 
-
-     vi /etc/xinetd.d/telnet
-
- 
-
-     将disable的值设置为no
-
- 
-
-四、重启xinetd服务
-
- 
-
+4. 重启xinetd服务
+```sh
      service xinetd restart
-
- 
-
-五、若要开放root登录权限，则配置/etc/pam.d/login文件
-
- 
-
-     vi /etc/pam.d/login
-
- 
-
-     将auth    required       pam_securetty.so这一行注释掉即可；
+     
+     rcxinetd start     
+```
+5. 若要开放root登录权限，则配置/etc/pam.d/login文件
+```sh
+vi /etc/pam.d/login
+```
+将auth    required       pam_securetty.so这一行注释掉即可；
