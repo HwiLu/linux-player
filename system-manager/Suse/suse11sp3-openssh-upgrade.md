@@ -67,7 +67,7 @@ openssl version -a
 ### 安装openssh
 
 ```sh
-tar -zxvf openssh-7.5p1.tar.gz ;cd openssh-7.9p1;./configure --prefix=/usr/ --sysconfdir=/etc/ssh -with-zlib -with-ssl-dir=/usr/local/ssl -with-md5-passwords mandir=/usr/share/man ; make && make install 
+tar -zxvf openssh-7.9p1.tar.gz ;cd openssh-7.9p1;./configure --prefix=/usr/ --sysconfdir=/etc/ssh -with-zlib -with-ssl-dir=/usr/local/ssl -with-md5-passwords mandir=/usr/share/man ; make && make install 
 
 cp -p contrib/suse/rc.sshd /etc/init.d/sshd 
 chmod +x /etc/init.d/sshd 
