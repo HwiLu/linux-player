@@ -50,7 +50,7 @@ cd /usr/local/zlib/ ; ./configure --shared ; make && make install
 ### 安装openssl
 
 ```sh
-tar zxvf /tmp/openssl-1.0.2n.tar.gz ; cd openssl-1.0.2n/; ./config shared ; make && make install 
+tar zxvf /tmp/openssl-1.0.2o.tar.gz ; cd openssl-1.0.2o/; ./config shared ; make && make install 
 
 mv /usr/bin/openssl /usr/bin/openssl.old
 
