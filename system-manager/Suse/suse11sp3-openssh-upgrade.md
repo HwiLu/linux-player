@@ -50,7 +50,7 @@ cd /usr/local/zlib/ ; ./configure --shared ; make && make install
 ### 安装openssl
 
 ```sh
-tar zxvf /tmp/openssl-1.0.2o.tar.gz ; cd openssl-1.0.2o/; ./config shared ; make && make install 
+tar -zxvf openssl-1.0.2o.tar.gz ; cd openssl-1.0.2o/; ./config shared ; make && make install 
 
 mv /usr/bin/openssl /usr/bin/openssl.old
 
@@ -67,7 +67,7 @@ openssl version -a
 ### 安装openssh
 
 ```sh
-tar zxvf openssh-7.5p1.tar.gz ;cd openssh-7.9p1;./configure --prefix=/usr/ --sysconfdir=/etc/ssh -with-zlib -with-ssl-dir=/usr/local/ssl -with-md5-passwords mandir=/usr/share/man ; make && make install 
+tar -zxvf openssh-7.5p1.tar.gz ;cd openssh-7.9p1;./configure --prefix=/usr/ --sysconfdir=/etc/ssh -with-zlib -with-ssl-dir=/usr/local/ssl -with-md5-passwords mandir=/usr/share/man ; make && make install 
 
 cp -p contrib/suse/rc.sshd /etc/init.d/sshd 
 chmod +x /etc/init.d/sshd 
