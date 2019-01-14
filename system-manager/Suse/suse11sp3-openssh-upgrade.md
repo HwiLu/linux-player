@@ -11,7 +11,7 @@ chkconfig -list|grep telnet
 ```sh 
 zypper in telnet-server
 ```
-zypper源配置请见[zypper源配置](../zypper_confugurate.md)
+zypper源配置请见[zypper源配置](./zypper_confugurate.md)
 
 3. 修改/etc/xinetd.d/telnet文件
 ```sh
