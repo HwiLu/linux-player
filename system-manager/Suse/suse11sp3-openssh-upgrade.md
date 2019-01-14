@@ -82,7 +82,10 @@ mv /usr/bin/ssh{,.old}
 cp sshd /usr/sbin/sshd
 cp ssh /usr/bin/ssh
 
+#重启
 /etc/init.d/sshd restart
+
+#查看其版本
 ssh -V
 
 ```
