@@ -12,5 +12,5 @@ if [ ! -n "$str" ]; then
 
 fi
 
-#$str必须加双引号
+# $str必须加双引号
 
