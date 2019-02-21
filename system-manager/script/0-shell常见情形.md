@@ -236,6 +236,8 @@ command >dev/null 2>&1
 cat test.txt | awk '{if (($1>1))}{print $1}'
 
 ```
+awk 
+
  - 数组的使用
  ---
  
