@@ -215,4 +215,4 @@ vim test.php
 <?php  
 echo "哈哈";  
 ?>  
-#打开浏览器，输入：http://ip/test.php，若能显示“哈哈”，代表解析成功！
+#打开浏览器，输入：http://ip/test.php，若能显示“哈哈”，代表解析成功！B
