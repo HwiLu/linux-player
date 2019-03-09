@@ -273,3 +273,24 @@ pattern1=XXX
 pattern2=XXX 
 sed -i "s/$pattern1/$pattern2/g" inputfile
  ```
+
+---
+
+**判断字符串为空**
+```sh
+# 判断字符串为空
+
+if [ -z "$str" ]; then
+
+    echo "empty string"
+
+fi
+
+if [ ! -n "$str" ]; then
+
+    echo "empty string"
+
+fi
+
+# $str必须加双引号
+```
