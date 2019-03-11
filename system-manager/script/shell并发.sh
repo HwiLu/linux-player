@@ -1,6 +1,9 @@
 #!/bin/bash
+
 conNum=$1 #并发数
+
 [ -e ./fork ] || mkfifo ./fork
+
 exec 3<> ./fork   
 
 rm -rf ./fork                   
