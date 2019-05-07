@@ -14,7 +14,7 @@ gpgcheck=0	#检查GPG-KEY，0为不检查，1为检查
 enabled=1	#启用YUM源，0为不启用，1为启用
 
 ```
-```
+
 ## 安装httpd或者ftp软件
 ```
 yum install httpd
