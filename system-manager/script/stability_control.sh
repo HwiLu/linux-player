@@ -3,7 +3,7 @@
 #配合monitor_api.sh一起使用
 
 function submitJob(){
-	usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples-2.8.2.jar pi 10 1000 >jobStatus.log 2>&1 &	
+	/usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples-2.8.2.jar pi 10 1000 >jobStatus.log 2>&1 &	
 	submitJobId=`cat jobStatus.log | grep -a "Running job: job_" | awk '{print $NF}' | sort | uniq | sed 's/job/application/g' | tail -n 1`
 	
 	echo "SubmitJobID:  $submitJobId"
