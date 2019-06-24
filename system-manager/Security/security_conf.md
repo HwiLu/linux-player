@@ -48,6 +48,11 @@ password requisite  pam_cracklib.so try_first_pass retry=3 dcredit=-1 lcredit=-1
 auth            sufficient      pam_rootok.so
 auth            required        pam_wheel.so use_uid
 ```
+或者
+```
+auth sufficient pam_rootok.so  
+auth required pam_wheel.so group=wheel
+```
 将用户加入wheel组usermod -G wheel username      #username为需要添加至wheel组的账户名称。
 
 # 系统服务
