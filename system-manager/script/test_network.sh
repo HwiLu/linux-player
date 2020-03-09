@@ -15,3 +15,7 @@ do
         fi
 		
 done
+
+# 发现nc在centos7上并没有z参数，可使用以下命令替代。
+
+echo ']' | telent $ip 8000 
