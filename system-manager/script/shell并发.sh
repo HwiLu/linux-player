@@ -33,7 +33,7 @@ exec 3>&-
 # 上面这个只能执行单条命令
 # 2.0
 #!/bin/bash
-QUEUE=`ls ./*.sql`
+QUEUE=`ls ./*.sql`              # 任务队列
 THREAD=50                       #声明并发线程并发个数，这个是此应用的关键，也就是设置管道的最大任务数
 TMPFIFO=/tmp/$$.fifo			         #声明管道名称，'$$'表示脚本当前运行的进程PID
 mkfifo $TMPFIFO                 #创建管道
